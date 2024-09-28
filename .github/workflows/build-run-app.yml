@@ -4,48 +4,54 @@ on:
   push:
   pull_request:
 
-# need this next block?
+# jobs:
+#   build-run:
+#     name: Build and run with startup msg verification
+#     uses: nasa/cFS/.github/workflows/build-run-app.yml@main
+
+
+# need this next
 # Force bash to apply pipefail option so pipeline failures aren't masked
-# defaults:
-#   run:
-#     shell: bash
+defaults:
+  run:
+    shell: bash
 
 jobs:
   # Checks for duplicate actions. Skips push actions if there is a matching or
   # duplicate pull-request action.
-  # checks-for-duplicates:
-  #   runs-on: ubuntu-latest
-  #   # Map a step output to a job output
-  #   outputs:
-  #     should_skip: ${{ steps.skip_check.outputs.should_skip }}
-  #   steps:
-  #     - id: skip_check
-  #       uses: fkirc/skip-duplicate-actions@master
-  #       with:
-  #         concurrent_skipping: 'same_content'
-  #         skip_after_successful_duplicate: 'true'
-  #         do_not_skip: '["pull_request", "workflow_dispatch", "schedule"]'
+  checks-for-duplicates:
+    runs-on: ubuntu-latest
+    # Map a step output to a job output
+    outputs:
+      should_skip: ${{ steps.skip_check.outputs.should_skip }}
+    steps:
+      - id: skip_check
+        uses: fkirc/skip-duplicate-actions@master
+        with:
+          concurrent_skipping: 'same_content'
+          skip_after_successful_duplicate: 'true'
+          do_not_skip: '["pull_request", "workflow_dispatch", "schedule"]'
 
   build-and-run:
-    # needs: checks-for-duplicates
-    # if: ${{ needs.checks-for-duplicates.outputs.should_skip != 'true' || contains(github.ref, 'main') }}
+    needs: checks-for-duplicates
+    if: ${{ needs.checks-for-duplicates.outputs.should_skip != 'true' || contains(github.ref, 'main') }}
     name: Build and run app, confirm startup message
     runs-on: ubuntu-20.04
 
     steps:
-      # - name: Set up environment variables
-      #   # Apps typically use lowercase targets and uppercase names, this logic is fragile but works
-      #   run: |
-      #     echo "APP_UPPER=$(echo ${{ inputs.app-name }} | sed 's/[a-z]/\U&/g')" >> $GITHUB_ENV
-      #     echo "APP_LOWER=$(echo ${{ inputs.app-name }} | sed 's/[A-Z]/\L&/g')" >> $GITHUB_ENV
+      - name: Set up environment variables
+        # Apps typically use lowercase targets and uppercase names, this logic is fragile but works
+        run: |
+          echo "APP_UPPER=$(echo ${{ inputs.app-name }} | sed 's/[a-z]/\U&/g')" >> $GITHUB_ENV
+          echo "APP_LOWER=$(echo ${{ inputs.app-name }} | sed 's/[A-Z]/\L&/g')" >> $GITHUB_ENV
 
-      # - name: Set up start string for verification
-      #   run: |
-      #     if [[ "${{ inputs.startup-string }}" == '' ]]; then
-      #       echo "START_STRING=$APP_UPPER Initialized." >> $GITHUB_ENV
-      #     else
-      #       echo "START_STRING=${{ inputs.startup-string }}" >> $GITHUB_ENV
-      #     fi
+      - name: Set up start string for verification
+        run: |
+          if [[ "${{ inputs.startup-string }}" == '' ]]; then
+            echo "START_STRING=$APP_UPPER Initialized." >> $GITHUB_ENV
+          else
+            echo "START_STRING=${{ inputs.startup-string }}" >> $GITHUB_ENV
+          fi
 
       - name: Checkout Bundle Main
         uses: actions/checkout@v4
@@ -88,15 +94,15 @@ jobs:
           name: cFS_startup_log
           path: cFS_startup_cpu1.txt
 
-      # - name: Confirm startup string
-      #   run: |
-      #     if [[ -z $(grep "$START_STRING" cFS_startup_cpu1.txt) ]]; then
-      #       echo "Startup verification string not found in log: $START_STRING"
-      #       echo ""
-      #       echo "Possible related event messages:"
-      #       grep "/$APP_UPPER " cFS_startup_cpu1.txt
-      #       exit -1
-      #     fi
+      - name: Confirm startup string
+        run: |
+          if [[ -z $(grep "$START_STRING" cFS_startup_cpu1.txt) ]]; then
+            echo "Startup verification string not found in log: $START_STRING"
+            echo ""
+            echo "Possible related event messages:"
+            grep "/$APP_UPPER " cFS_startup_cpu1.txt
+            exit -1
+          fi
 
       - name: Check for cFS Warnings
         if: success() || failure()
