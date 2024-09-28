@@ -5,44 +5,6 @@ on:
   pull_request:
 
 jobs:
-  build-and-run:
-    name: Build and run app, confirm startup message
-    runs-on: ubuntu-20.04
-
-    steps:
-      - name: Checkout cFS
-        uses: actions/checkout@v4
-        with:
-          repository: nasa/cFS
-          path: cfs
-
-      - name: Checkout Sample App
-        uses: actions/checkout@v4
-        with:
-          path: cfs/apps/sample_app
-
-      - name: Copy Files
-        run: |
-          cp ./cfs/cfe/cmake/Makefile.sample ./cfs/Makefile
-          cp -r ./cfs/cfe/cmake/sample_defs ./cfs/sample_defs
-
-      - name: Build cFS
-        run: |
-          cd cfs
-          make SIMULATION=native prep
-          make
-          make install
-
-      - name: Run cFS
-        run: |
-          cd cfs/build/exe/cpu1
-          ./core-cpu1 &
-          sleep 10
-          grep "Sample App Initialized" core-cpu1.log
-
-      - name: Upload logs
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: cFS-logs
-          path: cfs/build/exe/cpu1/*.log
+  build-run:
+    name: Build and run with startup msg verification
+    uses: thnkslprpt/cFS/.github/workflows/build-run-sample-app.yml@test
