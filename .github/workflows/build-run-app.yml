@@ -42,7 +42,7 @@ jobs:
 
       - name: Upload logs
         if: always()
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: cFS-logs
           path: cfs/build/exe/cpu1/*.log
