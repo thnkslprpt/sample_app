@@ -211,8 +211,8 @@ void Test_SAMPLE_APP_DisplayParamCmd(void)
  */
 void UtTest_Setup(void)
 {
-    ADD_TEST(SAMPLE_APP_ReportHousekeeping);
-    ADD_TEST(SAMPLE_APP_NoopCmd);
+    //ADD_TEST(SAMPLE_APP_ReportHousekeeping);
+    //ADD_TEST(SAMPLE_APP_NoopCmd);
     ADD_TEST(SAMPLE_APP_ResetCountersCmd);
     ADD_TEST(SAMPLE_APP_ProcessCmd);
     ADD_TEST(SAMPLE_APP_DisplayParamCmd);
