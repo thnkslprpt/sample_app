@@ -198,7 +198,7 @@ CFE_Status_t SAMPLE_APP_Init(void)
         CFE_Config_GetVersionString(VersionString, SAMPLE_APP_CFG_MAX_VERSION_STR_LEN, "Sample App", SAMPLE_APP_VERSION,
                                     SAMPLE_APP_BUILD_CODENAME, SAMPLE_APP_LAST_OFFICIAL);
 
-        CFE_EVS_SendEvent(SAMPLE_APP_INIT_INF_EID, CFE_EVS_EventType_INFORMATION, "Test App Initialized.%s",
+        CFE_EVS_SendEvent(SAMPLE_APP_INIT_INF_EID, CFE_EVS_EventType_INFORMATION, "Sample App Initialized.%s",
                           VersionString);
     }
 
