@@ -8,4 +8,5 @@ jobs:
   build-run:
     name: Build and run with startup msg verification
     uses: thnkslprpt/cFS/.github/workflows/build-run-app.yml@test
-
+    with:
+      startup-string: "Sample App Initialized"
