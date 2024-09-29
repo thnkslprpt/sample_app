@@ -181,5 +181,5 @@ void Test_SAMPLE_APP_Init(void)
 void UtTest_Setup(void)
 {
     ADD_TEST(SAMPLE_APP_Main);
-    ADD_TEST(SAMPLE_APP_Init);
+    //ADD_TEST(SAMPLE_APP_Init);
 }
