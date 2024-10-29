@@ -16,30 +16,26 @@
  * limitations under the License.
  ************************************************************************/
 
-/*
-** Purpose:
-** Coverage Unit Test cases for the BPACC_FUN Application
-**
-** Notes:
-** This implements various test cases to exercise all code
-** paths through all functions defined in the BPACC_FUN application.
-**
-** It is primarily focused at providing examples of the various
-** stub configurations, hook functions, and wrapper calls that
-** are often needed when coercing certain code paths through
-** complex functions.
-*/
+/**
+ * @file
+ *
+ * BPACC_FUN Application Platform Configuration Header File
+ *
+ * This is a compatibility header for the "platform_cfg.h" file that has
+ * traditionally provided both public and private config definitions
+ * for each CFS app.
+ *
+ * These definitions are now provided in two separate files, one for
+ * the public/mission scope and one for internal scope.
+ *
+ * @note This file may be overridden/superceded by mission-provided defintions
+ * either by overriding this header or by generating definitions from a command/data
+ * dictionary tool.
+ */
+#ifndef BPACC_FUN_PLATFORM_CFG_H
+#define BPACC_FUN_PLATFORM_CFG_H
 
-#ifndef SETUP_H
-#define SETUP_H
-
-#include "common_types.h"
-
-#include "utassert.h"
-#include "uttest.h"
-#include "utstubs.h"
-
-void BPACC_FUN_UT_Setup(void);
-void BPACC_FUN_UT_TearDown(void);
+#include "bpacc_fun_mission_cfg.h"
+#include "bpacc_fun_internal_cfg.h"
 
 #endif

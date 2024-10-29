@@ -30,16 +30,33 @@
 ** complex functions.
 */
 
-#ifndef SETUP_H
-#define SETUP_H
+/*
+ * Includes
+ */
 
-#include "common_types.h"
+#include "bpacc_fun_coveragetest_common.h"
+#include "bpacc_fun.h"
+#include "bpacc_fun_dispatch.h"
+#include "bpacc_fun_cmds.h"
 
-#include "utassert.h"
-#include "uttest.h"
-#include "utstubs.h"
+/*
+**********************************************************************************
+**          TEST CASE FUNCTIONS
+**********************************************************************************
+*/
 
-void BPACC_FUN_UT_Setup(void);
-void BPACC_FUN_UT_TearDown(void);
+void Test_BPACC_FUN_APP_TaskPipe(void)
+{
+    /*
+     * Test Case For:
+     * void BPACC_FUN_APP_TaskPipe
+     */
+}
 
-#endif
+/*
+ * Register the test cases to execute with the unit test tool
+ */
+void UtTest_Setup(void)
+{
+    ADD_TEST(BPACC_FUN_APP_TaskPipe);
+}

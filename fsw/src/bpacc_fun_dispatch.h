@@ -16,30 +16,23 @@
  * limitations under the License.
  ************************************************************************/
 
+/**
+ * @file
+ *
+ * Main header file for the BPACC_FUN application
+ */
+
+#ifndef BPACC_FUN_DISPATCH_H
+#define BPACC_FUN_DISPATCH_H
+
 /*
-** Purpose:
-** Coverage Unit Test cases for the BPACC_FUN Application
-**
-** Notes:
-** This implements various test cases to exercise all code
-** paths through all functions defined in the BPACC_FUN application.
-**
-** It is primarily focused at providing examples of the various
-** stub configurations, hook functions, and wrapper calls that
-** are often needed when coercing certain code paths through
-** complex functions.
+** Required header files.
 */
+#include "cfe.h"
+#include "bpacc_fun_msg.h"
 
-#ifndef SETUP_H
-#define SETUP_H
+void BPACC_FUN_TaskPipe(const CFE_SB_Buffer_t *SBBufPtr);
+void BPACC_FUN_ProcessGroundCommand(const CFE_SB_Buffer_t *SBBufPtr);
+bool BPACC_FUN_VerifyCmdLength(const CFE_MSG_Message_t *MsgPtr, size_t ExpectedLength);
 
-#include "common_types.h"
-
-#include "utassert.h"
-#include "uttest.h"
-#include "utstubs.h"
-
-void BPACC_FUN_UT_Setup(void);
-void BPACC_FUN_UT_TearDown(void);
-
-#endif
+#endif /* BPACC_FUN_DISPATCH_H */

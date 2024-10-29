@@ -16,30 +16,20 @@
  * limitations under the License.
  ************************************************************************/
 
+/**
+ * @file
+ *   This file contains the prototypes for the BPACC_FUN App utility functions
+ */
+
+#ifndef BPACC_FUN_UTILS_H
+#define BPACC_FUN_UTILS_H
+
 /*
-** Purpose:
-** Coverage Unit Test cases for the BPACC_FUN Application
-**
-** Notes:
-** This implements various test cases to exercise all code
-** paths through all functions defined in the BPACC_FUN application.
-**
-** It is primarily focused at providing examples of the various
-** stub configurations, hook functions, and wrapper calls that
-** are often needed when coercing certain code paths through
-** complex functions.
+** Required header files.
 */
+#include "bpacc_fun.h"
 
-#ifndef SETUP_H
-#define SETUP_H
+CFE_Status_t BPACC_FUN_TblValidationFunc(void *TblData);
+void         BPACC_FUN_GetCrc(const char *TableName);
 
-#include "common_types.h"
-
-#include "utassert.h"
-#include "uttest.h"
-#include "utstubs.h"
-
-void BPACC_FUN_UT_Setup(void);
-void BPACC_FUN_UT_TearDown(void);
-
-#endif
+#endif /* BPACC_FUN_UTILS_H */

@@ -16,30 +16,20 @@
  * limitations under the License.
  ************************************************************************/
 
+#include "cfe_tbl_filedef.h" /* Required to obtain the CFE_TBL_FILEDEF macro definition */
+#include "bpacc_fun_tbl.h"
+
 /*
-** Purpose:
-** Coverage Unit Test cases for the BPACC_FUN Application
-**
-** Notes:
-** This implements various test cases to exercise all code
-** paths through all functions defined in the BPACC_FUN application.
-**
-** It is primarily focused at providing examples of the various
-** stub configurations, hook functions, and wrapper calls that
-** are often needed when coercing certain code paths through
-** complex functions.
+** The following is an example of the declaration statement that defines the desired
+** contents of the table image.
 */
+BPACC_FUN_ExampleTable_t ExampleTable = {1, 2};
 
-#ifndef SETUP_H
-#define SETUP_H
-
-#include "common_types.h"
-
-#include "utassert.h"
-#include "uttest.h"
-#include "utstubs.h"
-
-void BPACC_FUN_UT_Setup(void);
-void BPACC_FUN_UT_TearDown(void);
-
-#endif
+/*
+** The macro below identifies:
+**    1) the data structure type to use as the table image format
+**    2) the name of the table to be placed into the cFE Example Table File Header
+**    3) a brief description of the contents of the file image
+**    4) the desired name of the table image binary file that is cFE compatible
+*/
+CFE_TBL_FILEDEF(ExampleTable, BPACC_FUN.ExampleTable, Table Utility Test Table, bpacc_fun_tbl.tbl)

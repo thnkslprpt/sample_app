@@ -16,30 +16,30 @@
  * limitations under the License.
  ************************************************************************/
 
-/*
-** Purpose:
-** Coverage Unit Test cases for the BPACC_FUN Application
-**
-** Notes:
-** This implements various test cases to exercise all code
-** paths through all functions defined in the BPACC_FUN application.
-**
-** It is primarily focused at providing examples of the various
-** stub configurations, hook functions, and wrapper calls that
-** are often needed when coercing certain code paths through
-** complex functions.
-*/
-
-#ifndef SETUP_H
-#define SETUP_H
+/**
+ * @file
+ *   Specification for the BPACC_FUN table related
+ *   constant definitions.
+ *
+ * @note
+ *   These Macro definitions have been put in this file (instead of
+ *   bpacc_fun_tbl.h). DO NOT PUT ANY TYPEDEFS OR
+ *   STRUCTURE DEFINITIONS IN THIS FILE!
+ *   ADD THEM TO bpacc_fun_tbl.h IF NEEDED!
+ */
+#ifndef BPACC_FUN_TBLDEFS_H
+#define BPACC_FUN_TBLDEFS_H
 
 #include "common_types.h"
+#include "bpacc_fun_mission_cfg.h"
 
-#include "utassert.h"
-#include "uttest.h"
-#include "utstubs.h"
-
-void BPACC_FUN_UT_Setup(void);
-void BPACC_FUN_UT_TearDown(void);
+/*
+** Example Table structure
+*/
+typedef struct
+{
+    uint16 Int1;
+    uint16 Int2;
+} BPACC_FUN_ExampleTable_t;
 
 #endif

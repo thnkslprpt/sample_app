@@ -16,30 +16,29 @@
  * limitations under the License.
  ************************************************************************/
 
-/*
-** Purpose:
-** Coverage Unit Test cases for the BPACC_FUN Application
-**
-** Notes:
-** This implements various test cases to exercise all code
-** paths through all functions defined in the BPACC_FUN application.
-**
-** It is primarily focused at providing examples of the various
-** stub configurations, hook functions, and wrapper calls that
-** are often needed when coercing certain code paths through
-** complex functions.
-*/
+/**
+ * @file
+ *   BPACC_FUN Application Private Config Definitions
+ *
+ * This provides default values for configurable items that are internal
+ * to this module and do NOT affect the interface(s) of this module.  Changes
+ * to items in this file only affect the local module and will be transparent
+ * to external entities that are using the public interface(s).
+ *
+ * @note This file may be overridden/superceded by mission-provided defintions
+ * either by overriding this header or by generating definitions from a command/data
+ * dictionary tool.
+ */
+#ifndef BPACC_FUN_INTERNAL_CFG_H
+#define BPACC_FUN_INTERNAL_CFG_H
 
-#ifndef SETUP_H
-#define SETUP_H
+/***********************************************************************/
+#define BPACC_FUN_PIPE_DEPTH 32 /* Depth of the Command Pipe for Application */
 
-#include "common_types.h"
+#define BPACC_FUN_NUMBER_OF_TABLES 1 /* Number of Example Table(s) */
 
-#include "utassert.h"
-#include "uttest.h"
-#include "utstubs.h"
+#define BPACC_FUN_TABLE_OUT_OF_RANGE_ERR_CODE -1
 
-void BPACC_FUN_UT_Setup(void);
-void BPACC_FUN_UT_TearDown(void);
+#define BPACC_FUN_TBL_ELEMENT_1_MAX 10
 
 #endif

@@ -16,30 +16,29 @@
  * limitations under the License.
  ************************************************************************/
 
-/*
-** Purpose:
-** Coverage Unit Test cases for the BPACC_FUN Application
-**
-** Notes:
-** This implements various test cases to exercise all code
-** paths through all functions defined in the BPACC_FUN application.
-**
-** It is primarily focused at providing examples of the various
-** stub configurations, hook functions, and wrapper calls that
-** are often needed when coercing certain code paths through
-** complex functions.
-*/
+/**
+ * @file
+ *   BPACC_FUN Application Public Definitions
+ *
+ * This provides default values for configurable items that affect
+ * the interface(s) of this module.  This includes the CMD/TLM message
+ * interface, tables definitions, and any other data products that
+ * serve to exchange information with other entities.
+ *
+ * @note This file may be overridden/superceded by mission-provided defintions
+ * either by overriding this header or by generating definitions from a command/data
+ * dictionary tool.
+ */
+#ifndef BPACC_FUN_INTERFACE_CFG_H
+#define BPACC_FUN_INTERFACE_CFG_H
 
-#ifndef SETUP_H
-#define SETUP_H
-
-#include "common_types.h"
-
-#include "utassert.h"
-#include "uttest.h"
-#include "utstubs.h"
-
-void BPACC_FUN_UT_Setup(void);
-void BPACC_FUN_UT_TearDown(void);
+/**
+ * \brief Length of string buffer in the Display Value command
+ *
+ * The Display Value command offers an example of how to use command
+ * parameters of different types.  This macro controls the length
+ * of the string parameter.
+ */
+#define BPACC_FUN_STRING_VAL_LEN 10
 
 #endif

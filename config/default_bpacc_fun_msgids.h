@@ -16,30 +16,18 @@
  * limitations under the License.
  ************************************************************************/
 
-/*
-** Purpose:
-** Coverage Unit Test cases for the BPACC_FUN Application
-**
-** Notes:
-** This implements various test cases to exercise all code
-** paths through all functions defined in the BPACC_FUN application.
-**
-** It is primarily focused at providing examples of the various
-** stub configurations, hook functions, and wrapper calls that
-** are often needed when coercing certain code paths through
-** complex functions.
-*/
+/**
+ * @file
+ *   BPACC_FUN Application Message IDs
+ */
+#ifndef BPACC_FUN_MSGIDS_H
+#define BPACC_FUN_MSGIDS_H
 
-#ifndef SETUP_H
-#define SETUP_H
+#include "cfe_core_api_base_msgids.h"
+#include "bpacc_fun_topicids.h"
 
-#include "common_types.h"
-
-#include "utassert.h"
-#include "uttest.h"
-#include "utstubs.h"
-
-void BPACC_FUN_UT_Setup(void);
-void BPACC_FUN_UT_TearDown(void);
+#define BPACC_FUN_CMD_MID     CFE_PLATFORM_CMD_TOPICID_TO_MIDV(CFE_MISSION_BPACC_FUN_CMD_TOPICID)
+#define BPACC_FUN_SEND_HK_MID CFE_PLATFORM_CMD_TOPICID_TO_MIDV(CFE_MISSION_BPACC_FUN_SEND_HK_TOPICID)
+#define BPACC_FUN_HK_TLM_MID  CFE_PLATFORM_TLM_TOPICID_TO_MIDV(CFE_MISSION_BPACC_FUN_HK_TLM_TOPICID)
 
 #endif

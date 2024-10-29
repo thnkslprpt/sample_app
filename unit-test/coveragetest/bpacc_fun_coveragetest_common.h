@@ -16,30 +16,39 @@
  * limitations under the License.
  ************************************************************************/
 
+/**
+ * @file
+ *
+ * Common definitions for all sample_app coverage tests
+ */
+
+#ifndef BPACC_FUN_COVERAGETEST_COMMON_H
+#define BPACC_FUN_COVERAGETEST_COMMON_H
+
 /*
-** Purpose:
-** Coverage Unit Test cases for the BPACC_FUN Application
-**
-** Notes:
-** This implements various test cases to exercise all code
-** paths through all functions defined in the BPACC_FUN application.
-**
-** It is primarily focused at providing examples of the various
-** stub configurations, hook functions, and wrapper calls that
-** are often needed when coercing certain code paths through
-** complex functions.
-*/
-
-#ifndef SETUP_H
-#define SETUP_H
-
-#include "common_types.h"
+ * Includes
+ */
 
 #include "utassert.h"
 #include "uttest.h"
 #include "utstubs.h"
 
-void BPACC_FUN_UT_Setup(void);
-void BPACC_FUN_UT_TearDown(void);
+#include "setup.h"
+#include "eventcheck.h"
 
-#endif
+#include "cfe.h"
+#include "bpacc_fun_eventids.h"
+#include "bpacc_fun.h"
+#include "bpacc_fun_dispatch.h"
+#include "bpacc_fun_cmds.h"
+#include "bpacc_fun_utils.h"
+#include "bpacc_fun_msgids.h"
+#include "bpacc_fun_msg.h"
+#include "bpacc_fun_tbl.h"
+
+/*
+ * Macro to add a test case to the list of tests to execute
+ */
+#define ADD_TEST(test) UtTest_Add((Test_##test), BPACC_FUN_UT_Setup, BPACC_FUN_UT_TearDown, #test)
+
+#endif /* BPACC_FUN_COVERAGETEST_COMMON_H */

@@ -16,30 +16,27 @@
  * limitations under the License.
  ************************************************************************/
 
-/*
-** Purpose:
-** Coverage Unit Test cases for the BPACC_FUN Application
-**
-** Notes:
-** This implements various test cases to exercise all code
-** paths through all functions defined in the BPACC_FUN application.
-**
-** It is primarily focused at providing examples of the various
-** stub configurations, hook functions, and wrapper calls that
-** are often needed when coercing certain code paths through
-** complex functions.
-*/
+/**
+ * @file
+ *
+ * Define BPACC_FUN Events IDs
+ */
 
-#ifndef SETUP_H
-#define SETUP_H
+#ifndef BPACC_FUN_EVENTS_H
+#define BPACC_FUN_EVENTS_H
 
-#include "common_types.h"
+#define BPACC_FUN_RESERVED_EID      0
+#define BPACC_FUN_INIT_INF_EID      1
+#define BPACC_FUN_CC_ERR_EID        2
+#define BPACC_FUN_NOOP_INF_EID      3
+#define BPACC_FUN_RESET_INF_EID     4
+#define BPACC_FUN_MID_ERR_EID       5
+#define BPACC_FUN_CMD_LEN_ERR_EID   6
+#define BPACC_FUN_PIPE_ERR_EID      7
+#define BPACC_FUN_VALUE_INF_EID     8
+#define BPACC_FUN_CR_PIPE_ERR_EID   9
+#define BPACC_FUN_SUB_HK_ERR_EID    10
+#define BPACC_FUN_SUB_CMD_ERR_EID   11
+#define BPACC_FUN_TABLE_REG_ERR_EID 12
 
-#include "utassert.h"
-#include "uttest.h"
-#include "utstubs.h"
-
-void BPACC_FUN_UT_Setup(void);
-void BPACC_FUN_UT_TearDown(void);
-
-#endif
+#endif /* BPACC_FUN_EVENTS_H */

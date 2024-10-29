@@ -16,30 +16,36 @@
  * limitations under the License.
  ************************************************************************/
 
+/**
+ * @file
+ *
+ * Auto-Generated stub implementations for functions defined in sample_app header
+ */
+
+#include "bpacc_fun_app.h"
+#include "utgenstub.h"
+
 /*
-** Purpose:
-** Coverage Unit Test cases for the BPACC_FUN Application
-**
-** Notes:
-** This implements various test cases to exercise all code
-** paths through all functions defined in the BPACC_FUN application.
-**
-** It is primarily focused at providing examples of the various
-** stub configurations, hook functions, and wrapper calls that
-** are often needed when coercing certain code paths through
-** complex functions.
-*/
+ * ----------------------------------------------------
+ * Generated stub function for BPACC_FUN_Init()
+ * ----------------------------------------------------
+ */
+CFE_Status_t BPACC_FUN_Init(void)
+{
+    UT_GenStub_SetupReturnBuffer(BPACC_FUN_Init, CFE_Status_t);
 
-#ifndef SETUP_H
-#define SETUP_H
+    UT_GenStub_Execute(BPACC_FUN_Init, Basic, NULL);
 
-#include "common_types.h"
+    return UT_GenStub_GetReturnValue(BPACC_FUN_Init, CFE_Status_t);
+}
 
-#include "utassert.h"
-#include "uttest.h"
-#include "utstubs.h"
+/*
+ * ----------------------------------------------------
+ * Generated stub function for BPACC_FUN_Main()
+ * ----------------------------------------------------
+ */
+void BPACC_FUN_Main(void)
+{
 
-void BPACC_FUN_UT_Setup(void);
-void BPACC_FUN_UT_TearDown(void);
-
-#endif
+    UT_GenStub_Execute(BPACC_FUN_Main, Basic, NULL);
+}

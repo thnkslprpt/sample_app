@@ -16,30 +16,36 @@
  * limitations under the License.
  ************************************************************************/
 
-/*
-** Purpose:
-** Coverage Unit Test cases for the BPACC_FUN Application
-**
-** Notes:
-** This implements various test cases to exercise all code
-** paths through all functions defined in the BPACC_FUN application.
-**
-** It is primarily focused at providing examples of the various
-** stub configurations, hook functions, and wrapper calls that
-** are often needed when coercing certain code paths through
-** complex functions.
-*/
-
-#ifndef SETUP_H
-#define SETUP_H
+/**
+ * @file
+ *   Specification for the BPACC_FUN command and telemetry
+ *   message constant definitions.
+ *
+ *  For BPACC_FUN this is only the function/command code definitions
+ */
+#ifndef BPACC_FUN_MSGDEFS_H
+#define BPACC_FUN_MSGDEFS_H
 
 #include "common_types.h"
+#include "bpacc_fun_app_fcncodes.h"
 
-#include "utassert.h"
-#include "uttest.h"
-#include "utstubs.h"
+typedef struct BPACC_FUN_DisplayParam_Payload
+{
+    uint32 ValU32;                            /**< 32 bit unsigned integer value */
+    int16  ValI16;                            /**< 16 bit signed integer value */
+    char   ValStr[BPACC_FUN_STRING_VAL_LEN]; /**< An example string */
+} BPACC_FUN_DisplayParam_Payload_t;
 
-void BPACC_FUN_UT_Setup(void);
-void BPACC_FUN_UT_TearDown(void);
+/*************************************************************************/
+/*
+** Type definition (BPACC_FUN App housekeeping)
+*/
+
+typedef struct BPACC_FUN_HkTlm_Payload
+{
+    uint8 CommandErrorCounter;
+    uint8 CommandCounter;
+    uint8 spare[2];
+} BPACC_FUN_HkTlm_Payload_t;
 
 #endif
