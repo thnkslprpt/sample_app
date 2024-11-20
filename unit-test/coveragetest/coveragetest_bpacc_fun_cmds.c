@@ -36,7 +36,6 @@
  * Includes
  */
 
-//#include "sample_lib.h" /* For BPACC_FUN_LIB_Function */
 #include "bpacc_fun_coveragetest_common.h"
 #include "bpacc_fun.h"
 #include "bpacc_fun_dispatch.h"
@@ -153,12 +152,6 @@ void Test_BPACC_FUN_APP_ProcessCmd(void)
      * Confirm that the CFE_TBL_GetAddress() call was done
      */
     UtAssert_STUB_COUNT(CFE_TBL_GetAddress, 1);
-
-    /*
-     * Confirm that the BPACC_FUN_LIB_Function() call was done
-     * NOTE: This stub is provided by the sample_lib library
-     */
-    UtAssert_STUB_COUNT(BPACC_FUN_LIB_Function, 1);
 
     /*
      * Configure the CFE_TBL_GetAddress function to return an error.

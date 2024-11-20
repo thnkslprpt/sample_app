@@ -20,9 +20,9 @@ endif()
 add_cfe_app(bpacc_fun ${APP_SRC_FILES})
 
 target_include_directories(bpacc_fun PUBLIC fsw/inc)
-# Include the public API from sample_lib to demonstrate how
+# Include the public API from BPAccel to demonstrate how
 # to call library-provided functions
-add_cfe_app_dependency(bpacc_fun sample_lib)
+#add_cfe_app_dependency(bpacc_fun bpaccel)
 
 # Add table
 add_cfe_tables(bpacc_fun fsw/tables/bpacc_fun_tbl.c)

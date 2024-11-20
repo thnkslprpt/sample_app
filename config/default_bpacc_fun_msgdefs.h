@@ -27,7 +27,7 @@
 #define BPACC_FUN_MSGDEFS_H
 
 #include "common_types.h"
-#include "bpacc_fun_app_fcncodes.h"
+#include "default_bpacc_fun_fcncodes.h"
 
 typedef struct BPACC_FUN_DisplayParam_Payload
 {

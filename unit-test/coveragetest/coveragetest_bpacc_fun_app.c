@@ -17,7 +17,7 @@
  ************************************************************************/
 
 /*
-** File: coveragetest_sample_app.c
+** File: coveragetest_bpacc_fun_app.c
 **
 ** Purpose:
 ** Coverage Unit Test cases for the BPACC_FUN Application
@@ -35,7 +35,6 @@
 /*
  * Includes
  */
-#include "sample_lib.h" /* For BPACC_FUN_LIB_Function */
 #include "bpacc_fun_coveragetest_common.h"
 
 /*

@@ -19,10 +19,10 @@
 /**
  * @file
  *
- * Auto-Generated stub implementations for functions defined in sample_app header
+ * Auto-Generated stub implementations for functions defined in bpacc_fun header
  */
 
-#include "bpacc_fun_app.h"
+#include "bpacc_fun.h"
 #include "utgenstub.h"
 
 /*

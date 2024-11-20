@@ -19,7 +19,7 @@
 /**
  * @file
  *
- * Common definitions for all sample_app coverage tests
+ * Common definitions for all bpacc_fun coverage tests
  */
 
 #ifndef BPACC_FUN_COVERAGETEST_COMMON_H

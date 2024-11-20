@@ -35,7 +35,6 @@
 /*
  * Includes
  */
-#include "sample_lib.h" /* For SAMPLE_LIB_Function */
 #include "bpacc_fun_coveragetest_common.h"
 
 /*

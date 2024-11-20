@@ -33,8 +33,7 @@
 #include "bpacc_fun_utils.h"
 #include "bpacc_fun_msg.h"
 
-// /* The bpaccel_lib module provides the BPACC_FUN_Function() prototype */
-// #include "bpaccel_lib.h"
+//#include bpaccel.h
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * **/
 /*                                                                            */
@@ -138,8 +137,7 @@ CFE_Status_t BPACC_FUN_ProcessCmd(const BPACC_FUN_ProcessCmd_t *Msg)
         return status;
     }
 
-    /* Invoke a function provided by BPACC_FUN_LIB */
-    BPACC_FUN_LIB_Function();
+    /* Call BPAccel Here */
 
     return CFE_SUCCESS;
 }

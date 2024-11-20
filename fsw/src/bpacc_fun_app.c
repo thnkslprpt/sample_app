@@ -74,6 +74,7 @@ void BPACC_FUN_Main(void)
         CFE_ES_PerfLogExit(BPACC_FUN_PERF_ID);
 
         /* Pend on receipt of command packet */
+        printf("CFE_SB_ReceiveBuffer PEND FOREVER\n");
         status = CFE_SB_ReceiveBuffer(&SBBufPtr, BPACC_FUN_Data.CommandPipe, CFE_SB_PEND_FOREVER);
 
         /*
